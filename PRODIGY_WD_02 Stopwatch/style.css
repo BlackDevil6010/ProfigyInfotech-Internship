@@ -1,0 +1,118 @@
+/* style.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* --- BACKGROUND CHANGE: Red to White Gradient --- */
+    background-image: linear-gradient(to bottom right, #e74c3c, #f8f9fa); /* Red (from stop button) to a very light gray/off-white */
+    /* Alternative: A more vibrant red to pure white:
+       background-image: linear-gradient(to bottom right, #D92121, #FFFFFF);
+    */
+    margin: 0;
+    /* Text color on body not critical as most text is in container */
+}
+
+.stopwatch-container {
+    /* --- CONTAINER APPEARANCE CHANGE for contrast --- */
+    background-color: rgba(50, 50, 50, 0.8); /* Dark semi-transparent for good contrast over gradient */
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Slightly stronger shadow */
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    /* --- HEADING COLOR CHANGE for contrast with dark container --- */
+    color: #f0f0f0; /* Light gray / Off-white */
+    margin-bottom: 25px;
+    font-size: 2.2em;
+}
+
+.time-display {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+    /* --- TIME DISPLAY COLOR CHANGE for contrast with dark container --- */
+    color: #FFFFFF; /* White */
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle darker background for the display */
+    padding: 10px 0;
+    border-radius: 8px;
+}
+
+.controls button {
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 5px 8px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.controls button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.controls button:active:not(:disabled) {
+    transform: scale(0.98) translateY(0);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.controls button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.7;
+    box-shadow: none;
+}
+
+/* Specific button colors - these should still work well */
+#startBtn {
+    background-color: #2ecc71; /* Green */
+}
+#startBtn:hover:not(:disabled) {
+    background-color: #27ae60;
+}
+
+#stopBtn {
+    background-color: #e74c3c; /* Red */
+}
+#stopBtn:hover:not(:disabled) {
+    background-color: #c0392b;
+}
+
+#resetBtn {
+    background-color: #f39c12; /* Orange */
+}
+#resetBtn:hover:not(:disabled) {
+    background-color: #e67e22;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+    .stopwatch-container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    .time-display {
+        font-size: 2.8em;
+    }
+    .controls button {
+        padding: 10px 18px;
+        font-size: 1em;
+        display: block;
+        width: calc(100% - 16px);
+        margin: 8px auto;
+    }
+}
