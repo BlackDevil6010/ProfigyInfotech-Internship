@@ -8,5 +8,4 @@ MODE: ONLINE
 
 LANGUAGES : HTML,CSS,JAVASCRIPT
 
-
-[Offer Letter.pdf](https://github.com/user-attachments/files/20580789/Offer.Letter.pdf)
+![WhatsApp Image 2025-06-04 at 02 26 03_02db83bd](https://github.com/user-attachments/assets/6ceb0bbc-b748-462e-83d7-14b688f8ba5f)
