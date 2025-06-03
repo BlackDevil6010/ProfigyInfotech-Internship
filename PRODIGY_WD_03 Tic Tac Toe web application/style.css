@@ -1,0 +1,175 @@
+:root {
+    --bg-dark: #1a2a33;
+    --cell-bg: #1f3641; /* Background for cells and turn indicator panel */
+    --cell-bg-hover: #2c4a58; /* Slightly lighter for hover */
+
+    --text-light-gray: #a8bec9; /* For "TURN FOR", inactive token text, status */
+    --text-dark-on-light: #18242c;  /* For text on active token, button, winning mark */
+
+    --color-x: #31c3bd;         /* Teal for X marks */
+    --color-x-shadow: #118C87;
+    --color-o: #f2b137;         /* Yellow/Orange for O marks */
+    --color-o-shadow: #CC8B13;
+
+    /* Turn indicator active state as per screenshot (O highlighted pinkish) */
+    /* Using a generic active color for turn indicator for simplicity */
+    --active-indicator-bg: #a8bec9; /* Using light gray for active token bg */
+    --active-indicator-text: var(--bg-dark); /* Dark text on light gray */
+
+    --button-bg: #f2b137; /* Using O's color for primary button, can be different */
+    --button-shadow: #CC8B13;
+    --button-secondary-bg: #a8bec9;
+    --button-secondary-shadow: #6B8A98;
+
+    --font-family: 'Outfit', sans-serif;
+    --cell-size: 90px;
+    --gap-size: 15px; /* Gap between cells */
+    --board-width: calc(3 * var(--cell-size) + 2 * var(--gap-size));
+}
+
+body {
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    margin: 0;
+    color: var(--text-light-gray);
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: var(--board-width);
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 700;
+}
+.logo-x { color: var(--color-x); }
+.logo-o { color: var(--color-o); }
+
+.turn-indicator-panel {
+    display: flex;
+    align-items: center;
+    background-color: var(--cell-bg);
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2);
+}
+
+.turn-text {
+    font-size: 0.9em;
+    font-weight: 700;
+    color: var(--text-light-gray);
+    margin-right: 10px;
+    letter-spacing: 1px;
+}
+
+.player-tokens {
+    display: flex;
+}
+
+.token {
+    font-size: 1.2em; /* Make X/O in token smaller */
+    font-weight: 700;
+    padding: 2px 8px; /* Adjust padding */
+    border-radius: 5px;
+    margin-left: 5px; /* Space between X and O tokens */
+    color: var(--text-light-gray); /* Default color for inactive text */
+    background-color: transparent; /* Default BG for inactive token */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.token.active {
+    color: var(--active-indicator-text);
+    background-color: var(--active-indicator-bg);
+}
+
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, var(--cell-size));
+    grid-template-rows: repeat(3, var(--cell-size));
+    gap: var(--gap-size);
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: var(--cell-bg);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5em; /* Large X O in cells */
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: inset 0 -6px 0 rgba(0,0,0,0.25); /* Inner shadow for depth */
+}
+
+.cell:not(.x):not(.o):hover { /* Only hover on empty cells */
+    background-color: var(--cell-bg-hover);
+}
+
+.cell.x { color: var(--color-x); }
+.cell.o { color: var(--color-o); }
+
+/* Winning cell styles */
+.cell.win.x-win {
+    background-color: var(--color-x);
+    color: var(--text-dark-on-light); /* Dark X on teal background */
+}
+
+.cell.win.o-win {
+    background-color: var(--color-o);
+    color: var(--text-dark-on-light); /* Dark O on yellow background */
+}
+
+.game-footer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.status {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--text-light-gray);
+    min-height: 1.5em; /* Reserve space */
+    margin-bottom: 20px;
+}
+
+.status .winner-x { color: var(--color-x); }
+.status .winner-o { color: var(--color-o); }
+
+
+#restart-button {
+    background-color: var(--button-secondary-bg);
+    color: var(--text-dark-on-light);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+    box-shadow: inset 0 -4px 0 var(--button-secondary-shadow);
+}
+
+#restart-button:hover {
+    background-color: #c1d3dc; /* Lighter version of secondary button */
+}
