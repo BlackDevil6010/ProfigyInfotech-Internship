@@ -9,4 +9,4 @@ MODE: ONLINE
 LANGUAGES : HTML,CSS,JAVASCRIPT
 
 
-![WhatsApp Image 2025-06-04 at 02 26 03_9ea18f42](https://github.com/user-attachments/assets/a020e64a-ca1b-4c92-b61e-958c2399fd86)
+[Offer Letter.pdf](https://github.com/user-attachments/files/20580789/Offer.Letter.pdf)
