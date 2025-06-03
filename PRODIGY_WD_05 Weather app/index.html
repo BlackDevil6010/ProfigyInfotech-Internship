@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN (for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="weather-app">
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter City Name">
+            <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div id="loading" style="display: none;">Loading...</div>
+        <div id="error" class="error-message" style="display: none;"></div>
+
+        <div class="weather-details-container" id="weather-info-content" style="display: none;">
+            <div class="location-info">
+                <h2 id="locationName">City Name</h2>
+                <p class="date" id="currentDate">Date</p>
+            </div>
+
+            <div class="main-weather">
+                <div class="weather-condition">
+                    <img id="weatherIcon" src="" alt="Weather icon">
+                    <span id="weatherDescription">Condition</span>
+                </div>
+                <div class="temperature">
+                    <span id="temperatureValue">0</span><span class="degree">°</span>
+                </div>
+            </div>
+
+            <div class="extra-details">
+                <div class="detail-box wind">
+                    <i class="fa-solid fa-wind"></i>
+                    <p><span id="windSpeed">0</span> km/h</p>
+                    <p>Wind</p>
+                </div>
+                <div class="detail-box humidity">
+                    <i class="fa-solid fa-droplet"></i>
+                    <p><span id="humidityValue">0</span>%</p>
+                    <p>Humidity</p>
+                </div>
+                <div class="detail-box visibility">
+                    <i class="fa-solid fa-eye"></i>
+                    <p><span id="visibilityValue">0</span> km</p>
+                    <p>Visibility</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

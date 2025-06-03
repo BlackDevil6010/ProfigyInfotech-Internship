@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a2e; /* Dark background, can be #000 if preferred */
+    padding: 20px;
+}
+
+.weather-app {
+    background-color: #C4B5FD; /* Light purple card background */
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 420px;
+    color: #1E293B; /* Dark text for better contrast on light purple */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input[type="text"] {
+    flex-grow: 1;
+    padding: 12px 18px;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    font-size: 1em;
+    background-color: #fff;
+    color: #333;
+}
+
+.search-box input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+.search-box button {
+    background-color: #6D28D9; /* Darker purple for search button */
+    color: white;
+    border: none;
+    outline: none;
+    padding: 12px;
+    width: 50px; /* Fixed width for a more square button */
+    height: 50px; /* Fixed height */
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #5B21B6; /* Slightly darker on hover */
+}
+
+/* Loading and Error Messages */
+#loading {
+    text-align: center;
+    font-size: 1.2em;
+    color: #1E293B;
+    padding: 20px;
+}
+
+.error-message {
+    text-align: center;
+    color: #D946EF; /* Using a magenta similar to date for error text */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+
+.weather-details-container {
+    text-align: center;
+}
+
+.location-info {
+    margin-bottom: 15px;
+}
+
+.location-info #locationName {
+    font-size: 2.2em;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #1E293B; /* Darker text */
+}
+
+.location-info .date {
+    background-color: #D946EF; /* Magenta/pink for date background */
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.main-weather {
+    margin: 20px 0;
+}
+
+.weather-condition {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.weather-condition img {
+    width: 60px; /* Adjust size as needed */
+    height: 60px;
+    /* No background for API icon unless desired */
+}
+
+.weather-condition #weatherDescription {
+    font-size: 1.4em;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #1E293B;
+}
+
+.temperature {
+    font-size: 6em; /* Very large temperature */
+    font-weight: 700;
+    line-height: 1;
+    color: #1E293B;
+    position: relative; /* For degree symbol positioning */
+}
+
+.temperature .degree {
+    font-size: 0.5em; /* Smaller degree symbol */
+    position: absolute;
+    top: 0.1em; /* Adjust vertical alignment */
+    margin-left: 5px;
+}
+
+.extra-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px; /* Gap between detail boxes */
+    margin-top: 25px;
+}
+
+.detail-box {
+    background-color: #A78BFA; /* Slightly darker/more saturated purple for detail boxes */
+    flex: 1; /* Equal width */
+    padding: 15px 10px;
+    border-radius: 15px;
+    text-align: center;
+    color: #1E293B; /* Dark text for details */
+    box-shadow: 0 0 15px 0px rgba(137, 207, 235, 0.6); /* Light blue glow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.detail-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px 2px rgba(137, 207, 235, 0.8);
+}
+
+.detail-box i {
+    font-size: 2em;
+    margin-bottom: 8px;
+    color: #1E293B; /* Darker icon color */
+}
+
+.detail-box p {
+    font-size: 0.9em;
+    line-height: 1.3;
+}
+.detail-box p:nth-of-type(1) { /* The value line */
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.detail-box p:nth-of-type(2) { /* The label line */
+    font-size: 0.8em;
+    color: #3d4f6e; /* Slightly lighter dark for label */
+}
+
+
+@media (max-width: 400px) {
+    .weather-app {
+        padding: 20px;
+    }
+    .location-info #locationName {
+        font-size: 1.8em;
+    }
+    .temperature {
+        font-size: 4.5em;
+    }
+    .weather-condition #weatherDescription {
+        font-size: 1.2em;
+    }
+    .extra-details {
+        flex-direction: column; /* Stack detail boxes on very small screens */
+    }
+    .detail-box {
+        margin-bottom: 10px;
+    }
+    .detail-box:last-child {
+        margin-bottom: 0;
+    }
+}
