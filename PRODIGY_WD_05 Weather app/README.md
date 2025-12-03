@@ -15,3 +15,5 @@ Design a web page that retrieves weather data from a weather API, based on eithe
 Show the current weather conditions, temperature, and other relevant information on the webpage.
 Develop a webpage that utilizes a weather API to fetch weather data, considering the user's location or a location provided by the user.
 Display the current weather conditions, temperature, and other pertinent details on the webpage.
+
+https://roadmap.sh/projects/weather-app
