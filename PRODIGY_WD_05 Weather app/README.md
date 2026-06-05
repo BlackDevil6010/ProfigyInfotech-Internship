@@ -2,7 +2,7 @@ TASK 5 : WEATHER APPLICATION
 
 PAGE NAME : Weather app
 
-WEBSITE:https://iridescent-marzipan-f1d62d.netlify.app/
+WEBSITE:https://weatherapp6010.netlify.app/
 
 DESCRIPTION:-
 Develop a webpage that retrieves weather information from a weather API, either based on the user's location or a location entered by the user.
